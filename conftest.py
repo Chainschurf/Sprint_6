@@ -15,9 +15,9 @@ def driver():
         firefox = webdriver.Firefox(options=firefox_options)
         firefox.maximize_window()
         firefox.get(Links.URL)
-        yield firefox
-        with allure.step("Close driver"):
-            firefox.quit()
+    yield firefox
+    with allure.step("Close driver"):
+        firefox.quit()
 
 
 @pytest.fixture
